@@ -3,7 +3,7 @@ import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://example.com',
+  site: 'https://example.com',
   output: 'static',
   integrations: [starlight({
     title: 'ESA Pages',

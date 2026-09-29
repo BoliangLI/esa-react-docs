@@ -25,7 +25,7 @@ npm run preview
 
 配置依据：[ESA Pages 构建与路由](https://help.aliyun.com/zh/edge-security-acceleration/esa/user-guide/build-pages)。远端 ESA 部署需在你的账号中验证，本地构建不代表已部署。
 
-静态文章有独立 HTML，`notFoundStrategy` 为 `404Page`。设置 ESA 构建环境变量 `SITE_URL` 为实际域名，以生成正确 canonical 链接。默认 `https://example.com` 仅是占位值，不影响页面预览。
+静态文章有独立 HTML，`notFoundStrategy` 为 `404Page`。站点域名在 `astro.config.mjs` 的 `site` 中固定配置为 `https://example.com`，不依赖环境变量。部署到自己的域名时，直接修改该配置并重新构建，以生成正确的 canonical 链接。
 
 ## 新增和维护内容
 

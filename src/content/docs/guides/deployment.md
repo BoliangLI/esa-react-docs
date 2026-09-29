@@ -28,7 +28,7 @@ Starlight 为每篇文章生成独立 HTML。ESA 可以直接处理目录索引�
 
 ## 设置站点地址
 
-在 ESA 构建环境变量中设置 `SITE_URL` 为实际域名，例如 `https://docs.example.com`。它用于 canonical 等绝对地址，修改后重新构建。
+站点域名在 `astro.config.mjs` 中固定配置为 `site: 'https://example.com'`，不使用环境变量。它用于 canonical 等绝对地址；更换域名时直接修改该配置并重新构建。
 
 ## 发布后检查
 
