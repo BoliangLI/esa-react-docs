@@ -1,0 +1,51 @@
+---
+title: 内容编写
+description: Nexus Docs · 内容编写
+sidebar:
+  order: 3
+---
+
+import { Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+
+## 新建文章
+
+<Steps>
+1. 在 `src/content/docs/start/` 中创建 Markdown 文件。
+2. 在 frontmatter 填写 `title`、`description`，以及可选的导航排序。
+3. 提交代码，框架会生成页面和搜索索引。
+</Steps>
+
+## 使用框架内置组件
+
+<Tabs>
+  <TabItem label="npm">
+
+```bash
+npm ci
+npm run dev
+```
+
+</TabItem>
+  <TabItem label="构建">
+
+```bash
+npm run build
+npm run preview
+```
+
+</TabItem>
+</Tabs>
+
+## 提示与代码
+
+:::tip[保持文档简单]
+优先使用标准 Markdown 与框架内置组件，不必自己开发提示框、标签页、代码高亮或复制按钮。
+:::
+
+```js title="example.js"
+export const message = 'Hello, ESA!';
+```
+
+## 添加图片
+
+将图片放入项目，并使用 Markdown 图片语法。请为图片提供准确的替代文本。
