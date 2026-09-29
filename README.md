@@ -1,4 +1,4 @@
-# Nexus Docs · Astro Starlight 文档模板
+# ESA Pages · Astro Starlight 文档模板
 
 直接使用 **Astro 7 + Starlight + 官方 Tailwind CSS 4 集成**。仓库沿用 `esa-react-docs` 名称，以保持已有导入地址；内部已改为 Astro 静态文档站。
 

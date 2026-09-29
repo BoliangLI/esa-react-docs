@@ -6,7 +6,7 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://example.com',
   output: 'static',
   integrations: [starlight({
-    title: 'Nexus Docs',
+    title: 'ESA Pages',
     description: '使用 Starlight 编写、搜索和发布技术文档。',
     defaultLocale: 'root',
     locales: { root: { label: '简体中文', lang: 'zh-CN' } },

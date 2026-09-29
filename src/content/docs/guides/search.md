@@ -1,6 +1,6 @@
 ---
 title: 全文搜索
-description: Nexus Docs · 全文搜索
+description: ESA Pages · 全文搜索
 sidebar:
   order: 3
 ---

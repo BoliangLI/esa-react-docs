@@ -1,6 +1,6 @@
 ---
 title: 品牌与主题
-description: Nexus Docs · 品牌与主题
+description: ESA Pages · 品牌与主题
 sidebar:
   order: 2
 ---
