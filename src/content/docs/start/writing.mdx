@@ -1,24 +1,24 @@
 ---
-title: 内容编写
-description: ESA Pages · 内容编写
+title: Writing content
+description: Create pages with Markdown and built-in components.
 sidebar:
   order: 3
 ---
 
 import { Tabs, TabItem, Steps } from '@astrojs/starlight/components';
 
-## 新建文章
+## Create a page
 
 <Steps>
-1. 在 `src/content/docs/start/` 中创建 Markdown 文件。
-2. 在 frontmatter 填写 `title`、`description`，以及可选的导航排序。
-3. 提交代码，框架会生成页面和搜索索引。
+1. Create a Markdown file in `src/content/docs/start/`.
+2. Add a `title`, `description`, and optional sidebar order in frontmatter.
+3. Commit your changes. The build generates pages and a search index.
 </Steps>
 
-## 使用框架内置组件
+## Use built-in components
 
 <Tabs>
-  <TabItem label="npm">
+  <TabItem label="Develop">
 
 ```bash
 npm ci
@@ -26,7 +26,7 @@ npm run dev
 ```
 
 </TabItem>
-  <TabItem label="构建">
+  <TabItem label="Build">
 
 ```bash
 npm run build
@@ -36,16 +36,16 @@ npm run preview
 </TabItem>
 </Tabs>
 
-## 提示与代码
+## Callouts and code
 
-:::tip[保持文档简单]
-优先使用标准 Markdown 与框架内置组件，不必自己开发提示框、标签页、代码高亮或复制按钮。
+:::tip[Keep documentation simple]
+Prefer Markdown and built-in components for callouts, tabs, syntax highlighting, and copy buttons.
 :::
 
 ```js title="example.js"
 export const message = 'Hello, ESA!';
 ```
 
-## 添加图片
+## Add images
 
-将图片放入项目，并使用 Markdown 图片语法。请为图片提供准确的替代文本。
+Add images to the project and reference them with Markdown image syntax. Provide accurate alternative text for accessibility.

@@ -1,27 +1,23 @@
 ---
-title: 全文搜索
-description: ESA Pages · 全文搜索
+title: Search
+description: Find answers with static full-text search.
 sidebar:
   order: 3
 ---
 
-## 无服务器搜索
+## Built-in Pagefind search
 
-默认搜索由 Starlight 集成的 Pagefind 提供。每次生产构建都会扫描最终 HTML，生成分块索引。
+Starlight uses Pagefind to generate a full-text search index during the build. The browser downloads small index chunks as needed, without a search server or API key.
 
-## 搜索正文
-
-尝试搜索「canonical」「全文搜索」或「环境变量」。结果会定位到对应文档与章节，而不仅匹配文章标题。
-
-## 自定义与排除
-
-可通过框架支持的 Pagefind 配置和页面元数据调整索引。大量文档需要托管搜索时，再采用 Starlight 官方 Algolia 插件。
-
-## 本地验证
+## Test locally
 
 ```bash
 npm run build
 npm run preview
 ```
 
-打开预览地址后，用页面顶部的搜索按钮或快捷键进入搜索。
+Search for words such as "deployment", "Markdown", or "components". The development server does not include a production search index.
+
+## Extend when needed
+
+Use the official [Starlight search guide](https://starlight.astro.build/guides/site-search/) for Pagefind configuration and the official Algolia integration.

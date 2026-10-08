@@ -1,17 +1,17 @@
 ---
-title: 部署到 ESA
-description: ESA Pages · 部署到 ESA
+title: Deploy to ESA
+description: Publish a static documentation site with ESA Pages.
 sidebar:
   order: 1
 ---
 
-## 导入仓库
+## Import your repository
 
-在 ESA 函数和 Pages 中导入 `BoliangLI/esa-react-docs`，选择 `main` 分支，项目根目录保持 `/`，Node.js 选择 22。
+Connect your repository to ESA Pages. Choose the production branch and use the repository root as the project directory. Select Node.js 22.12 or newer.
 
-## 构建配置
+The included `esa.jsonc` defines the build:
 
-```json title="esa.jsonc"
+```json
 {
   "installCommand": "npm ci",
   "buildCommand": "npm run build",
@@ -22,19 +22,16 @@ sidebar:
 }
 ```
 
-## 静态站点路由
+## Static routing
 
-Starlight 为每篇文章生成独立 HTML。ESA 可以直接处理目录索引；不存在的页面使用生成的 `404.html`。本模板无需函数入口。
+Starlight generates a static HTML page for every route. Publish the entire `dist` directory and serve `404.html` for missing pages. No application server is required.
 
-## 设置站点地址
+## Site URL
 
-站点域名在 `astro.config.mjs` 中固定配置为 `site: 'https://example.com'`，不使用环境变量。它用于 canonical 等绝对地址；更换域名时直接修改该配置并重新构建。
+The `site` constant in `astro.config.mjs` is empty by default. Set a fixed domain there when your deployment address is ready to enable absolute canonical URLs and a sitemap. No environment variable is required.
 
-## 发布后检查
+## Verify the deployment
 
-- 首页和文档详情可直接访问。
-- 刷新文档详情仍能显示当前文章。
-- 搜索能找到正文内容。
-- 不存在的路径显示 404 页面。
+Open a content page directly, refresh it, test search, and visit an unknown path to check the 404 page.
 
-参阅 [ESA 官方构建与路由文档](https://help.aliyun.com/zh/edge-security-acceleration/esa/user-guide/build-pages)。
+See the [official ESA documentation](https://www.alibabacloud.com/help/en/edge-security-acceleration/).

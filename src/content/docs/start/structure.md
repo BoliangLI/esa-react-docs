@@ -1,28 +1,21 @@
 ---
-title: 项目结构
-description: ESA Pages · 项目结构
+title: Project structure
+description: Find the files that power your documentation.
 sidebar:
   order: 2
 ---
 
-## 内容与配置分离
-
 ```text
-astro.config.mjs          # 站点、导航、语言与主题配置
-esa.jsonc                 # ESA 构建与静态资源配置
-src/content.config.ts    # Starlight 内容集合与字段校验
-src/content/docs/        # Markdown / MDX 文档
-src/styles/global.css   # 官方 Tailwind 集成
+astro.config.mjs       Site title, sidebar, and integrations
+esa.jsonc              ESA build and static asset settings
+src/content/docs/      Markdown and MDX pages
+src/styles/global.css  Tailwind and theme styles
 ```
 
-## 自动生成页面
+## File-based routes
 
-`src/content/docs/guides/example.md` 对应 `/guides/example/`。无需添加路由组件。
+A file at `src/content/docs/start/quickstart.md` becomes `/start/quickstart/`. Add a page to the relevant directory and Starlight adds it to the sidebar.
 
-## 自动生成导航
+## Page metadata
 
-侧栏根据目录生成，文章 frontmatter 的 `sidebar.order` 决定顺序。
-
-:::note
-标题目录、上一篇和下一篇由 Starlight 生成，避免维护两份数据。
-:::
+Use `title` and `description` in frontmatter. Set `sidebar.order` to control ordering within a section. Starlight provides navigation and pagination automatically.

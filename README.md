@@ -1,44 +1,31 @@
-# ESA Pages · Astro Starlight 文档模板
+# ESA Pages — Docs
 
-直接使用 **Astro 7 + Starlight + 官方 Tailwind CSS 4 集成**。仓库沿用 `esa-react-docs` 名称，以保持已有导入地址；内部已改为 Astro 静态文档站。
+An English-language static template built with Astro + Starlight + Tailwind CSS for ESA Pages.
 
-## 框架负责的能力
+## Development
 
-文件路由、Markdown/MDX、内容字段校验、自动侧栏、标题目录、上一页/下一页、代码高亮与复制、移动导航、主题切换、国际化基础设施、Pagefind 全文搜索及构建索引，全部由 Starlight 提供。
-
-本项目没有自定义页面组件、搜索实现或路由状态。首页卡片、提示框、标签页、步骤条直接使用 Starlight 内置组件。
-
-## 本地运行
-
-使用 Node.js **22.12+**。
+Use Node.js 22.12 or newer.
 
 ```bash
 npm ci
 npm run dev
+```
+
+## Build and deploy
+
+```bash
 npm run build
 npm run preview
 ```
 
-## ESA 部署
+Import your repository into ESA Pages. The included `esa.jsonc` specifies `npm ci`, `npm run build`, and `./dist` as the static asset directory. No runtime application server is required.
 
-导入本仓库的 `main` 分支，根目录 `/`，Node.js 22。`esa.jsonc` 已配置安装 `npm ci`、构建 `npm run build`、输出 `dist`。纯静态站点，函数入口留空。
+## Customize
 
-配置依据：[ESA Pages 构建与路由](https://help.aliyun.com/zh/edge-security-acceleration/esa/user-guide/build-pages)。远端 ESA 部署需在你的账号中验证，本地构建不代表已部署。
+Edit Markdown and MDX in `src/content/docs/`. Configure branding and navigation in `astro.config.mjs`. Starlight provides English search, themes, navigation, code highlighting, and copy buttons. Social links and the `site` URL are empty by default. Set a fixed site URL when ready to enable canonical URLs and a sitemap. Search is available after a production build.
 
-静态文章有独立 HTML，`notFoundStrategy` 为 `404Page`。站点域名在 `astro.config.mjs` 的 `site` 中固定配置为 `https://example.com`，不依赖环境变量。部署到自己的域名时，直接修改该配置并重新构建，以生成正确的 canonical 链接。
+Internal navigation and official project links are retained. Personal repository URLs, example domains, and placeholder contact links are not configured.
 
-## 新增和维护内容
+## License
 
-- 在 `src/content/docs/` 添加 `.md` 或 `.mdx` 文件，填写 `title` 和 `description`。
-- `sidebar.order` 控制自动导航顺序，不需要写路由。
-- `astro.config.mjs` 配置标题、语言、社交链接和目录。
-- `src/styles/global.css` 仅使用官方 Tailwind 样式入口。
-- `src/content/docs/start/writing.mdx` 演示 Tabs、Steps 和代码块。
-
-## 验证
-
-`npm run build` 包含 Astro 类型检查、静态构建及 Pagefind 索引生成。搜索请在生产构建后的 `npm run preview` 中测试；开发服务器不生成生产索引。
-
-[Starlight 文档](https://starlight.astro.build/) · [Astro 文档](https://docs.astro.build/)
-
-MIT
+MIT. Preserve the included license and upstream attribution when distributing this template.
